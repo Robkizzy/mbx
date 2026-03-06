@@ -1,9 +1,16 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "index.js" }
-  ]
+  "name": "your-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",               // optional but helps avoid ESM/CommonJS mix issues
+  "scripts": {
+    "start": "node index.js"        // Vercel ignores this but good practice
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "axios": "^1.7.7"
+  },
+  "engines": {
+    "node": "20.x"                   // or 18.x / 22.x — match Vercel supported versions
+  }
 }
